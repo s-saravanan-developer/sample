@@ -1,0 +1,574 @@
+//document Ready
+
+$( document ).ready(function() {
+    console.log( "ready!" );
+});
+
+$(document).on('click', '.bat', function(e) {
+    
+});
+// Window Onload
+
+window.onload = function(e){ 
+    console.log("window.onload", e, Date.now() ,window.tdiff, 
+    (window.tdiff[1] = Date.now()) && window.tdiff.reduce(fred) ); 
+}
+
+// Onclick
+
+$( "#target" ).click(function() {
+  alert( "Handler for .click() called." );
+});
+
+selected Value
+$("#customer_name > option").each(function() {
+      //alert(this.text + ' ' + this.value);
+      $('#customer_name > option[value=<?php echo $advice[0]['customer_id']; ?>]').attr('selected','selected');
+  });
+
+ // Add Class Remove Class
+
+  $('.class-name').addClass('class-name');
+  $('.class-name').removeAttr('class-name');
+
+// All action
+
+$("#test").bind("blur focus focusin focusout load resize scroll unload click" + " dblclick mousedown mouseup mousemove mouseover mouseout mouseenter " + "mouseleave change select submit keydown keypress keyup error", function(e) {
+    $("#r").empty().text(e.type);
+});
+
+
+
+// Add New Box
+
+var count = 1;
+$( "#add_new_box" ).click(function() {
+   count = count+1;
+  $("#dat_tbl").append(
+   ''
+    +'<tr id=box_'+count+'><td>'
+         +'<div class="form-group">                                      '
+            +'<div class="input-group mb-3">'
+               +'<div class="input-group-prepend">'
+                  +'<span class="input-group-text " id="basic-icon-addon1">'
+                     +'<i class="zmdi zmdi-account zmdi-hc-fw"></i>'
+                  +'</span>'
+               +'</div>'
+              +'<input type="text"  placeholder="Units" class="form-control" name="" >'
+            +'</div>'
+         +'</div>'
+      +'</td>'
+      +'<td>'
+         +'<div class="form-group">                                      '
+            +'<div class="input-group mb-3">'
+               +'<div class="input-group-prepend">'
+                  +'<span class="input-group-text " id="basic-icon-addon1">'
+                     +'<i class="zmdi zmdi-account zmdi-hc-fw"></i>'
+                  +'</span>'
+               +'</div>'
+               +'<input type="text"  placeholder="Units" class="form-control" name="" >'
+            +'</div>'
+         +'</div>'
+      +'</td>'
+      +'<td>N/a</td>'
+      +'<td>'
+          +'<button  class="btn btn-danger close_x" type="button"><i class="zmdi zmdi-close zmdi-hc-fw" style="color: white;"></i></button>'
+      +'</td></tr>'
+   );
+    
+    
+    
+    == Ajax Function
+
+ $.ajax({
+           type: "POST",
+           url: "/Link",
+           data: {data: variable},
+           cache: true,
+           async: false,
+           success: function(data){
+            alert(data);
+           }
+         });
+
+Force JSON
+
+echo json_encode($data, JSON_FORCE_OBJECT); 
+    
+var json = JSON.parse(data);    
+
+alert(value[0].cgst);   
+alert(value[0].sgst); 
+
+JSON ENCODE
+  var pro = new Array();  // get Related Data for TEAM
+        $.ajax({
+           type: "POST",
+           url: "<?php echo base_url(); ?>transaction/Advice_entry/get_related_product_team",
+           data: {team_id: $('#team').val(),region_id: $('#s2_demo1').val()},
+           cache: true,
+           async: false,
+           success: function(data){
+            var data = JSON.parse(data);
+            for (var i = 0; i < data.length; i++) {
+                var counter = data[i];
+                pro.push("'"+counter.Item_name+"'");
+            }
+           }
+         });
+
+== Query grouping
+
+== Root path in JS
+
+var base_url = window.location.origin+'/'+window.location.pathname.split("/")[1];
+$('.editimagePreview').attr('src', base_url+'/attachments/Products_image/'+val18);
+
+== Array Parser
+
+var purchasetax = JSON.parse("[" + val17 + "]");
+
+  
+});
+
+
+// Remove The Added Box
+
+
+$(document).on('click', '.close_x', function(e) {
+
+   alert($(this).parents('tr:first').attr('id'));
+
+});
+
+// Remove parent of 'remove' link when link is clicked.
+$('.project_images').on('click', '.remove_project_file', function(e) {
+    e.preventDefault();
+
+    $(this).parent().remove();
+});
+
+
+// Disable All input
+
+$(document).ready(function(){
+        $("input").prop("disabled", true);
+        $("select").prop("disabled", true);
+    });
+
+
+SUM ALL VALUE CLASS
+
+  var sum = 0;
+    // iterate through each td based on class and add the values
+      $(".last_total").each(function() {
+
+          var value = $(this).val();
+          // add only if the value is number
+          if(!isNaN(value) && value.length != 0) {
+              sum += parseFloat(value);
+          }
+          $(".total_value").text(sum );
+      });
+
+GET PARENT ID
+var id = $(this).parents('tr:first').attr('id');
+
+
+SERIALIZE
+
+        $.ajax({
+          type	: $.ajax({  "POST",
+          url	: "update.php",
+          data	: $("#priviledge").serialize(),
+          datatype : 'html',
+          success: function(data) {			
+            alert(data);
+          }
+        });
+
+
+PHP:
+        $postForm = $_POST;
+        print_r($_POST);
+        echo $_POST["can_open_admin"];
+            
+BASE URL:
+            
+var base_url = window.location.origin+'/'+window.location.pathname.split("/")[1];   
+            
+-----> EVENT Functions
+            
+$(document).on('change click focusin', '.qty', function(e) {
+   var id = $(this).parents('tr:first').attr('id');
+   // Calculation For DISCOUNT FUNCTION
+    calculation(id);
+    footer_total();
+  });            
+
+
+----->  MULTI QUERY VALUE
+
+$(".qty_"+id+",.dscnt_"+id+",.dscnt_q_"+id+",.dscnt_v_"+id ).bind("click change keyup",function(e) {
+    
+ // Code Analyze   
+}    
+
+                                                                  
+-----> AUTO REFRESH PAGE
+                                                                  
+function update() {
+  $.get("response.php", function(data) {
+    $("#some_div").html(data);
+    window.setTimeout(update, 10000);
+  });
+}
+
+----> ALL MOUSE EVENTS CODE
+
+
+<div id="testMouseEvents">Mouse Event Test Area</div>
+<div id="log"></div>
+
+
+$(function() {
+    var $log = $('#log');
+    $('#testMouseEvents').on('mousedown mouseup mouseenter mouseleave mouseover click dblclick', function(e) {
+        $log.append(' ' + e.type);
+        if (e.type == 'mousedown') {
+            if (e.which == 1) {
+                $log.append(' Left Button');
+            } else if (e.which == 3) {
+                $log.append(' Right Button');
+            } else if (e.which == 2) {
+                $log.append(' Middle Button');
+            }
+        }
+    });
+});
+
+CSS
+#testMouseEvents { width: 100px; border: 1px solid #c2c2c2; margin: 10px; padding: 12px; font-size: 0.8em; }
+
+#log { position: fixed; right: 0px; bottom: 2px; height: 100px; width: 300px; border: 1px solid blue; padding: 1px; font-size: 0.9em;}
+
+
+--------->
+    
+function dup_check(){
+   var seen = {};
+      $('#bs4-table .check').each(function() 
+      {
+          var index =  $(this).index();
+          var txt = $(this).text();
+          if (seen[index] === txt) 
+          {
+              $(this).text('');
+          }
+          else 
+          {
+              seen[index] = txt;
+          }
+      });
+} 
+    
+
+PRINT PDF
+
+  window.onload = function () {
+    window.print();
+}
+
+
+function range_quantity(id){
+   var value = $('.qty_'+id).val();
+    if ((value !== '') && (value.indexOf('.') === -1)) {
+        $('.qty_'+id).val(Math.max(Math.min(value, $('.quantity_val_'+id).val()), -$('.quantity_val_'+id).val()));
+    }
+}
+    
+CHECK DUPLICATION
+
+$(document).ready(function() {
+    var names = ['vadim', 'thomas', 'tanya', 'timur', 'eve', 'kate', 'karen', 'peter'];
+
+    $('#check').click(function() {
+        var name = $('#name').val();
+        if (jQuery.inArray(name, names)!='-1') {
+            alert(name + ' is in the array!');
+        } else {
+            alert(name + ' is NOT in the array...');
+        }
+    });
+});
+    
+    
+MULTISELECT 2
+
+$('#team_mode').multiselect('rebuild');
+$('#team_mode').multiselect('select', ['1', '2', '4']);
+
+$('#fields_u').append(fields_html);
+$('#fields_u').multiselect();
+$('#fields_u').multiselect('select', ['1', '2', '4']);
+$('#fields_u').multiselect('refresh');
+
+  // Team
+  document.addEventListener("DOMContentLoaded", function() {
+      $(document).ready(function() {
+            $('#team_mode').multiselect({
+              enableClickableOptGroups: true,
+                  enableCollapsibleOptGroups: true,
+                  enableFiltering: true,
+                  includeSelectAllOption: true
+                });
+            });
+   });
+    
+ADD CSS IN JQUERY
+
+
+$("p").css("background-color");
+
+$("p").css("background-color", "yellow");
+
+DUPLICATE INPUT CHECK
+
+var arr = [];
+$("input").each(function(){
+    var value = $(this).val();
+    if (arr.indexOf(value) == -1)
+        arr.push(value);
+    else
+        $(this).addClass("duplicate");
+});
+
+.duplicate {
+    border: 1px solid red;
+    color: red;
+}
+
+THIS JQUERY
+
+$(this).attr('id');
+$(this).find(".subclass").css("visibility","visible");
+
+
+FIND AND CLOSEST
+
+$('.btn-accent').closest('tr').find('td input.checkbox').prop("disabled", true);
+$('.btn-accent').closest('tr').find('td input.checkbox').removeClass('checkbox');
+ 
+
+ONLY NUMBERS
+
+$(document).ready(function () {
+  //called when key is pressed in textbox
+  $("#quantity").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+});
+
+
+
+VALIDATION INPUT
+
+https://jsfiddle.net/emkey08/zgvtjc51
+
+// Install input filters.
+setPatternFilter("intTextBox", /^-?\d*$/);
+setIntegerFilter("intLimitTextBox", 1500);
+setPatternFilter("uintTextBox", /^\d*$/);
+setPatternFilter("hexTextBox", /^[0-9a-f]*$/i);
+setPatternFilter("floatTextBox", /^-?\d*\.?\d*$/);
+setPatternFilter("currencyTextBox", /^-?\d*\.?\d{0,2}$/);
+
+// Restricts input for the given DOM ID to the given regex pattern.
+function setPatternFilter(id, pattern) {
+  setInputFilter(document.getElementById(id), function(value) { return pattern.test(value); });
+}
+
+
+CHECK INPUT EMPTY STATUS
+
+var flg = ''
+// $(document).ready(function() {
+    $('#save_model').click(function(e) {
+        var isValid = true;
+        $('input[type="text"]:required').each(function() {
+            if ($.trim($(this).val()) == '') {
+                isValid = false;
+                $(this).css({
+                    "border": "1px solid red",
+                    "background": "#FFCECE"
+                });
+                 flg = 1;
+            }
+            else {
+                $(this).css({
+                    "border": "",
+                    "background": ""
+                });
+                 flg = 0;
+            }
+        });
+        if (isValid == false) 
+            e.preventDefault();
+
+         if(flg === 0){
+            $("#date_model").modal("show");
+         }
+    });
+                                                                  
+$('*').on('blur change click dblclick error focus focusin focusout hover keydown keypress keyup load mousedown mouseenter mouseleave mousemove mouseout mouseover mouseup resize scroll select submit', function(){
+  $('#error').empty();
+});                                                                  
+              
+
+        $('#con_qty').click(function(){
+            if($(this).prop("checked") == true){
+                alert("Checkbox is checked.");
+            }
+            else if($(this).prop("checked") == false){
+                alert("Checkbox is unchecked.");
+            }
+        });
+
+
+######################################################################################################################
+    /*
+    Needed Html
+    <input type="checkbox" name="checkbox" class="master_checkbox" value="" id="select_all" /> 
+        <?php if ($value['delete_status'] == 1) { ?> 
+          <input type="checkbox" name="checkbox" disabled />
+        <?php }else{ ?>
+        <input type="checkbox" name="checkbox" class="checkbox_chid" value="<?php print_r($value['advice_id']); ?>" />
+        <?php } ?>
+    
+    <input type="text" class="selected_id" value="">    
+    <div class="card-footer bg-light">
+     <button class="btn btn-danger delete_action" data-toggle="modal" data-target="#deletemodel1">Delete</button>
+     <button class="btn btn btn-success delete_action" data-toggle="modal" data-target="#active_all_model">Active</button>
+     <button class="btn btn btn-info delete_action" data-toggle="modal" data-target="#deactive_all_model">In-Active
+     </button>
+      <button class="btn btn btn-primary" data-toggle="modal" data-target="#">Export Excel
+     </button>
+   </div>
+    */
+
+
+
+    $(document).on('click','.master_checkbox',function(e){
+        $('.delete_action').prop('disabled',false);
+
+        if($(this).is(":checked"))
+        {
+           $('.checkbox_chid').prop('checked', true);
+            get_all_checked_value();
+        }else if($(this).is(":not(:checked)")){ 
+            $('.checkbox_chid').prop('checked', false);
+            var box = new Array();
+            $('.selected_id').val(box);
+            $('.delete_action').prop('disabled',true);
+        }   
+        find_all_checked_or_unchecked();     
+  });
+
+  $(document).on('click','.checkbox_chid',function(e){
+        $('.delete_action').prop('disabled',false);
+        if($(this).is(":checked"))
+        {
+            selected_value_push_box(this.value);
+        }
+        else if($(this).is(":not(:checked)")){        
+            selected_value_pop_box(this.value);        
+        }
+        find_all_checked_or_unchecked();
+  });
+
+  function selected_value_push_box(value){
+    var string = $('.selected_id').val();    
+    if(string == ''){
+        $('.selected_id').val(value);
+    }else{
+        var array = string.split(",");
+        array.push(value);
+        $('.selected_id').val(array); 
+    }
+       
+  }
+
+  function selected_value_pop_box(value){
+
+    var string = $('.selected_id').val();
+    if(string == ''){
+        $('.selected_id').val(value);
+    }else{
+    var array = string.split(",");
+
+    var index = array.indexOf(value);
+    if (index > -1) {
+      array.splice(index, 1);
+    }
+    $('.selected_id').val(array);
+    }    
+  }
+
+  function get_all_checked_value(){
+
+    var box = new Array();
+    $(".checkbox_chid").each(function() {
+        box.push(this.value);
+    });
+    $('.selected_id').val(box);
+  }
+
+  function find_all_checked_or_unchecked(){
+    var check_filter = new Array();
+        $.each($(".checkbox_chid:checked"), function(){            
+                check_filter.push($(this).val());
+        });
+
+     if(check_filter.length === 0){
+        $('.delete_action').prop('disabled',true);
+     }else{
+        $('.delete_action').prop('disabled',false);        
+     }
+  }
+
+EXTRA OPTIONS
+<select id="select">
+  <option value="1" data-foo="dogs">this</option>
+  <option value="2" data-foo="cats">that</option>
+  <option value="3" data-foo="gerbils">other</option>
+</select>
+Code
+
+// JavaScript using jQuery
+$(function(){
+    $('select').change(function(){
+       var selected = $(this).find('option:selected');
+       var extra = selected.data('foo'); 
+       ...
+    });
+});
+
+// Plain old JavaScript
+var sel = document.getElementById('select');
+var selected = sel.options[sel.selectedIndex];
+var extra = selected.getAttribute('data-foo');
+
+  /*
+    Delete Button Action
+  */
+  $(function(){
+    $('.delete_action').prop('disabled',true);
+  });
+  
+
+######################################################################################################################
