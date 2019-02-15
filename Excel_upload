@@ -1,0 +1,91 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Export extends CI_Controller {
+		public function __construct() {
+        parent::__construct();
+        if ($this->session->userdata('is_logged_in') == '') {
+            redirect('login');
+            session_destroy();
+        $this->load->helper(array('form', 'url'));
+        $this->load->helper('download');
+        $this->load->library('PHPReport');
+        $this->load->model('common_model');
+        }
+    }
+    
+    public function download($h1,$a1,$empInfo)
+    {
+        // create file name
+        $fileName = 'data-'.time().'.xls';  
+        // load excel library
+        $this->load->library('excel');
+        // $this->load->model('master/Units_model');
+        // $empInfo = $this->Units_model->get_all_units_name();
+        $objPHPExcel = new PHPExcel();
+        $objPHPExcel->setActiveSheetIndex(0);
+        // set Header
+        $cnt = 0;
+        for ($i=0; $i < count($h1['h1']); $i++) { 
+             
+        $objPHPExcel->getActiveSheet()->SetCellValue($h1['h1'][$cnt], $h1['h2'][$cnt]);
+        $cnt++;
+        }
+       
+        // set Row
+        $rowCount = 2;
+        foreach ($empInfo as $element) {
+            $cnt_2 = 0;
+             for ($i=0; $i < count($a1['a1']); $i++) {
+                $objPHPExcel->getActiveSheet()->SetCellValue($a1['a1'][$cnt_2]. $rowCount, $element[$a1['a2'][$cnt_2]]);
+                $cnt_2++;
+            }
+          
+            $rowCount++;
+        }
+        //Save as an Excel BIFF (xls) file
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel,'Excel5');
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'.$fileName.'"');
+        header('Cache-Control: max-age=0');
+        $objWriter->save('php://output');
+        //exit();
+    }
+    public function excelColumnRange($lower, $upper) {
+            ++$upper;
+            for ($i = $lower; $i !== $upper; ++$i) {
+                yield $i;
+            }
+        }
+public function basic()
+    {      
+        foreach ($this->excelColumnRange('A', 'Z') as $value) {
+            $alpha[] = $value;
+        }
+        $this->load->model('master/Units_model');
+        $empInfo = $this->Units_model->get_all_units_name();
+        $header =array(
+            'unit Name',
+            'Unit Value',
+            'Status',
+            'alis_name',
+            'created_date',
+        );
+        $table_attrb = array(
+            'unit_name',
+            'unit_value',
+            'status',
+            'alis_name',
+            'created_date'
+        );
+        for ($head=0; $head < sizeof($header) ; $head++) {   
+            // Header 
+            $h_array1['h1'][$head] = $alpha[$head].'1'; 
+            $h_array1['h2'][$head] = $header[$head]; 
+            // attr
+            $a_array1['a1'][$head] = $alpha[$head]; 
+            $a_array1['a2'][$head] = $table_attrb[$head]; 
+        }
+        $this->download($h_array1,$a_array1,$empInfo);
+    }
+    
+}
